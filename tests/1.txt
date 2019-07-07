@@ -1,0 +1,5 @@
+[test]
+APP_NAME=env
+APP_ROOT=${project_dir}
+APP_KEY=1212121
+	
