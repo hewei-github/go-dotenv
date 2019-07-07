@@ -1,6 +1,6 @@
 环境遍历读取包
 --------------------
-weblinuxgame/env  
+weblinuxgame/go-dotenv
 
 > 支持.env 文件 .ini 文件读取
     
@@ -13,7 +13,7 @@ weblinuxgame/env
     eg : 
         
         import (
-            "github.com/weblinuxgame/Env"
+            "github.com/weblinuxgame/go-dotenv"
             "os"
          )
          
