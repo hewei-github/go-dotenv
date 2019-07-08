@@ -2,7 +2,7 @@ package tests
 
 import (
 	"fmt"
-	"github.com/weblinuxgame/Env"
+	Env "github.com/hewei-github/go-dotenv"
 	"os"
 	"reflect"
 	"regexp"
