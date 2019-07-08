@@ -62,20 +62,20 @@ func TestGet(t *testing.T)  {
 		"null":"",
 	}
 	for k,v:=range testTables {
-		if val:=app.Get(k,nil); val!= v {
+		if val:=app.Get(k,nil); val!= v && ""!=v {
 			t.Errorf("get env key[%s] expect value:%s ,but real value:%s",k,v,val)
 		}
 	}
 }
 
-//func TestGetEnvApp(t *testing.T) {
-//	var extArr = []string{"./.env", "./index.html", "./app.ini", "./1.txt", "../App.go", "test.yaml"}
-//	for _, it := range extArr {
-//		if _, err := Env.GetEnvApp(it); nil != err {
-//			t.Error(err.Error())
-//		}
-//	}
-//}
+func TestGetEnvApp(t *testing.T) {
+	var extArr = []string{"./.env", "dev.env", "./app.ini",}
+	for _, it := range extArr {
+		if _, err := Env.GetEnvApp(it); nil != err {
+			t.Error(err.Error())
+		}
+	}
+}
 
 func TestEnvGetAndSet(t *testing.T) {
 	app, _ := Env.GetEnvApp(".env")
