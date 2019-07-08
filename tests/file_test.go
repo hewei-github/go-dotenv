@@ -1,7 +1,7 @@
 package tests
 
 import (
-	Env "github.com/hewei-github/go-dotenv"
+	"github.com/hewei-github/go-dotenv"
 	"strings"
 	"testing"
 )

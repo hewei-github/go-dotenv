@@ -2,7 +2,7 @@ package tests
 
 import (
 	"fmt"
-	Env "github.com/hewei-github/go-dotenv"
+	"github.com/hewei-github/go-dotenv"
 	"os"
 	"reflect"
 	"regexp"
