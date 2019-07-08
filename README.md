@@ -1,6 +1,6 @@
 环境遍历读取包
 --------------------
-weblinuxgame/go-dotenv
+hewei-github/go-dotenv
 
 > 支持.env 文件 .ini 文件读取
     
@@ -13,7 +13,7 @@ weblinuxgame/go-dotenv
     eg : 
         
         import (
-            "github.com/weblinuxgame/go-dotenv"
+            "github.com/hewei-github/go-dotenv"
             "os"
          )
          
