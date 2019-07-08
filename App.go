@@ -234,3 +234,9 @@ func ParseStrLine(data string, assignOpt string) (map[string]string, error) {
 	err = fmt.Errorf("%s ,parse failed", "key value express not match")
 	return nil, err
 }
+
+// 包加载初始化函数
+func init()  {
+	RootEnv = new(ObjectEnv)
+	RootEnv.parser = DefaultParser{}
+}

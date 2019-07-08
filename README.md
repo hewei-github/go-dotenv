@@ -1,9 +1,15 @@
 环境遍历读取包
 --------------------
-hewei-github/go-dotenv
+pakcage : hewei-github/go-dotenv
 
-> 支持.env 文件 .ini 文件读取
-    
+ ![license](https://img.shields.io/badge/license-MIT-yellow.svg)
+ ![go](https://img.shields.io/badge/go-^1.11-green.svg)
+ ![package](https://img.shields.io/badge/go-package-blue.svg)
+ ![function](https://img.shields.io/badge/function-env-red.svg)
+ ![test](https://img.shields.io/badge/go-test-green.svg)
+
+> 支持.env 文件 .ini 文件读取 支持自动读取环境变量,支持配置动态变量(${xxx})
+
     .env 
      APP_NAME=test
      APP_ROOT=./
