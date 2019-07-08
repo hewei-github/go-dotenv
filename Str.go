@@ -72,6 +72,7 @@ func ToString(value interface{}) string {
 	}
 }
 
+// @todo 待完善
 func StrToAny(value string) interface{} {
 	if "" == value {
 		return nil
