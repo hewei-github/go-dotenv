@@ -21,11 +21,3 @@ type IEnvironment interface {
 	Set(key string, value interface{}) * ObjectEnv
 	Load(path string) * ObjectEnv
 }
-
-// 根
-var RootEnv * ObjectEnv
-
-func init()  {
-	RootEnv = new(ObjectEnv)
-	RootEnv.parser = DefaultParser{}
-}

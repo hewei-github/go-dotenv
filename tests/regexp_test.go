@@ -1,7 +1,7 @@
 package tests
 
 import (
-	"github.com/weblinuxgame/Env"
+	"github.com/hewei-github/go-dotenv"
 	"os"
 	"path/filepath"
 	regexp2 "regexp"

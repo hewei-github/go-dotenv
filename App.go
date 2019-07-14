@@ -21,7 +21,7 @@ func (app *ObjectEnv) Get(key string, def interface{}) interface{} {
 
 // 配置键个数
 func (app *ObjectEnv) Size() int {
-	if app !=nil {
+	if app != nil {
 		return len(app.container)
 	}
 	return 0
@@ -44,6 +44,7 @@ func (app ObjectEnv) Load(path string) *ObjectEnv {
 		return nil
 	}
 	env := new(ObjectEnv)
+	env.parser = RootEnv.parser
 	if content, err := app.parser.GetContent(path, DefAssignOpt, DefVarExpress); nil == err {
 		env.container = content
 	}
@@ -104,14 +105,12 @@ func (app *ObjectEnv) GetAll() map[string]string {
 func GetEnvApp(path string) (*ObjectEnv, error) {
 	file := GetFile(path)
 	if !file.IsExist() {
-		return new(ObjectEnv), fmt.Errorf("file: " + path + " not exists")
+		return nil, fmt.Errorf("file: " + path + " not exists")
 	}
-	container := make(map[string]interface{})
-	env := ObjectEnv{file: *file, container: container, parser: RootEnv.parser}
-	if !env.IsSupport(env.file.path) {
-		return &env, fmt.Errorf("file: " + path + " not support for env parser")
+	if !RootEnv.IsSupport(file.path) {
+		return nil, fmt.Errorf("file: " + path + " not support for env parser")
 	}
-	return env.Load(env.file.AbsolutePath()), nil
+	return RootEnv.Load(file.AbsolutePath()), nil
 }
 
 // 是否支持
@@ -234,4 +233,10 @@ func ParseStrLine(data string, assignOpt string) (map[string]string, error) {
 	}
 	err = fmt.Errorf("%s ,parse failed", "key value express not match")
 	return nil, err
+}
+
+// 包加载初始化函数
+func init()  {
+	RootEnv = new(ObjectEnv)
+	RootEnv.parser = DefaultParser{}
 }

@@ -27,8 +27,6 @@ type FileSchema interface {
 	Extension() string
 }
 
-// 初始化对象
-var FileNil = File{}
 
 // 文件是否存在
 func (file *File) IsExist() bool {

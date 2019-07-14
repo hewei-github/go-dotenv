@@ -1,7 +1,7 @@
 package tests
 
 import (
-	"github.com/weblinuxgame/Env"
+	"github.com/hewei-github/go-dotenv"
 	"strings"
 	"testing"
 )
